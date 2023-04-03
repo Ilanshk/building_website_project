@@ -3,7 +3,7 @@ export const Login = (props) => {
     const [username,setUsername] = useState('');
     const [password,setPassword]  =useState('');
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
         console.log(username);
         try{
@@ -15,7 +15,6 @@ export const Login = (props) => {
             console.log(error);
           }
             
-        }
         const delay = ms =>new Promise(resolve => setTimeout(resolve, ms));
 
     }
