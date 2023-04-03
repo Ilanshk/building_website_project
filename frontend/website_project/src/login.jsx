@@ -6,8 +6,22 @@ export const Login = (props) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log(username);
+        try{
+            axios.post('https://website-server-tc9l.onrender.com',{username, password});
+            await delay(5);
+            axios.get('https://website-server-tc9l.onrender.com').then(resp => setData(resp.data.message));
+          }catch(error)
+          {
+            console.log(error);
+          }
+            
+        }
+        const delay = ms =>new Promise(resolve => setTimeout(resolve, ms));
 
     }
+
+
+
 
     return (
         <div className="auth-form-container">
